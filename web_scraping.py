@@ -6,7 +6,6 @@ def get_gold_price():
     r = requests.get(url)
     c = r.content
     soup = bs(c,"html.parser")
-    goldPrice = soup.find_all("td",{"style":"text-align:right;vertical-align:middle;"})
     updating_time = soup.find("span",{"id":"DetailPlace_uc_goldprices1_lblAsTime"})
     BLSell = soup.find("span",{"id":"DetailPlace_uc_goldprices1_lblBLSell"})
     BLBuy = soup.find("span",{"id":"DetailPlace_uc_goldprices1_lblBLBuy"})
